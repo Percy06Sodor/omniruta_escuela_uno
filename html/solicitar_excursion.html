@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OmniRuta Escolar - Solicitud de Excursiones</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-light">
+    
+  <header class="top-bar d-flex align-items-center justify-content-between px-4 bg-dark text-white">
+    <div class="d-flex align-items-center gap-3">
+      <span class="fw-bold fs-4 text-danger">OMNIRUTA ESCOLAR</span>
+      <span class="badge bg-warning text-dark">Servicio de Excursiones</span>
+    </div>
+    <div class="d-flex align-items-center gap-2">
+      <span id="userNombre" class="fw-medium">Cargando...</span>
+      <button id="btnCerrarSesion" class="btn btn-sm btn-outline-light ms-3">Cerrar Sesión</button>
+    </div>
+  </header>
+
+  <div class="d-flex main-layout">
+    <aside class="sidebar p-3 bg-white border-end" style="width: 260px; min-height: 100vh;">
+      <ul class="nav nav-pills flex-column gap-2">
+        <li class="nav-item"><a href="dashboard_escuela.html" class="nav-link text-dark">Monitoreo Flota</a></li>
+        <li class="nav-item"><a href="gestion_alumnos.html" class="nav-link text-dark">Gestión Alumnos</a></li>
+        <li class="nav-item"><a href="rutas_combis.html" class="nav-link text-dark">Rutas & Combis</a></li>
+        <li class="nav-item"><a href="solicitar_excursion.html" class="nav-link active">Solicitar Excursión</a></li>
+      </ul>
+    </aside>
+
+    <main class="flex-grow-1 p-4">
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <div class="card border-0 shadow-sm p-4 rounded-4 bg-white">
+            <h5 class="fw-bold mb-3 text-dark">Nueva Solicitud de Excursión</h5>
+            <form id="formExcursion">
+              
+              <div class="mb-3">
+                <label class="form-label small fw-semibold">Nombre de la Salida / Evento</label>
+                <input type="text" id="tituloExcursion" class="form-control" placeholder="Ej: Visita al Museo Prohibido No Tocar" required>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label small fw-semibold">Lugar / Destino de la Excursión</label>
+                <input type="text" id="destinoExcursion" class="form-control" placeholder="Ej: Centro Cultural Recoleta, CABA" required>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label small fw-semibold">Fecha Programada</label>
+                <input type="date" id="fechaExcursion" class="form-control" required>
+              </div>
+
+              <div class="row g-2 mb-3">
+                <div class="col-6">
+                  <label class="form-label small fw-semibold">Hora de Salida</label>
+                  <input type="time" id="horaSalida" class="form-control" required>
+                </div>
+                <div class="col-6">
+                  <label class="form-label small fw-semibold">Hora de Regreso</label>
+                  <input type="time" id="horaRegreso" class="form-control" required>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label small fw-semibold">Cantidad Total de Alumnos</label>
+                <input type="number" id="cantidadAlumnos" class="form-control" placeholder="Ej: 35" min="1" required>
+              </div>
+
+              <div class="mb-4">
+                <label class="form-label small fw-semibold">Docentes / Adultos a Cargo</label>
+                <input type="text" id="docentesCargo" class="form-control" placeholder="Ej: Prof. Andrea y Prof. Martín" required>
+              </div>
+
+              <button type="submit" id="btnGuardarExcursion" class="btn btn-warning text-dark w-100 py-2 fw-bold">
+                Enviar Solicitud de Combis
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="card border-0 shadow-sm p-4 rounded-4 bg-white">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h5 class="fw-bold m-0">Historial de Salidas Institucionales</h5>
+              <span class="badge bg-warning bg-opacity-20 text-dark border border-warning px-3 py-2 rounded-pill" id="contadorExcursiones">
+                Cargando...
+              </span>
+            </div>
+
+            <div class="table-responsive">
+              <table class="table align-middle">
+                <thead>
+                  <tr class="text-secondary small">
+                    <th>Evento / Destino</th>
+                    <th>Fecha & Horario</th>
+                    <th>Alumnos / Responsables</th>
+                    <th>Estado</th>
+                  </tr>
+                </thead>
+                <tbody id="tablaExcursiones">
+                  <tr>
+                    <td colspan="4" class="text-center py-4 text-muted">Cargando solicitudes de excursiones...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="../js/solicitar_excursion.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OmniRuta Escolar - Registro Institucional</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-light d-flex align-items-center justify-content-center py-5" style="min-height: 100vh;">
+
+  <div class="container" style="max-width: 520px;">
+    <div class="card border-0 shadow-lg p-4 rounded-4 style-auth-card">
+      <div class="text-center mb-4">
+        <h3 class="fw-bold text-danger m-0">OMNIRUTA ESCOLAR</h3>
+        <p class="text-muted small">Alta de Nueva Escuela Privada</p>
+      </div>
+
+      <form id="formRegistroEscuela">
+        <h6 class="fw-bold text-secondary mb-3 border-bottom pb-2">Datos de la Institución</h6>
+        
+        <div class="mb-3">
+          <label class="form-label small fw-semibold">Nombre de la Escuela / Instituto</label>
+          <input type="text" id="nombreEscuela" class="form-control" placeholder="Ej: Colegio San Martín de Tours" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label small fw-semibold">Dirección Sede Principal</label>
+          <input type="text" id="direccionEscuela" class="form-control" placeholder="Ej: Av. del Libertador 4500, CABA" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label small fw-semibold">Teléfono de Contacto Directivo</label>
+          <input type="tel" id="telefonoEscuela" class="form-control" placeholder="Ej: 011 4789-0000" required>
+        </div>
+
+        <h6 class="fw-bold text-secondary my-3 border-bottom pb-2">Datos del Responsable de Cuenta</h6>
+
+        <div class="mb-3">
+          <label class="form-label small fw-semibold">Nombre y Apellido del Administrador</label>
+          <input type="text" id="nombreAdmin" class="form-control" placeholder="Ej: Lic. Marcelo Rossi" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label small fw-semibold">Correo Electrónico Institucional</label>
+          <input type="email" id="emailRegistro" class="form-control" placeholder="direccion@colegio.edu.ar" required>
+        </div>
+
+        <div class="mb-4">
+          <label class="form-label small fw-semibold">Contraseña de Acceso</label>
+          <input type="password" id="passwordRegistro" class="form-control" placeholder="Mínimo 6 caracteres" minlength="6" required>
+        </div>
+
+        <button type="submit" id="btnRegistro" class="btn btn-danger w-100 py-2 fw-semibold">
+          Registrar Escuela y Crear Cuenta
+        </button>
+      </form>
+
+      <div class="text-center mt-4">
+        <span class="small text-muted">¿Ya tienen cuenta institucional?</span>
+        <a href="login.html" class="text-decoration-none small text-danger fw-bold ms-1">Iniciar Sesión</a>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="../js/registro.js"></script>
+</body>
+</html>

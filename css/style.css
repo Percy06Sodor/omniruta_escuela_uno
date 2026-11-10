@@ -1,0 +1,150 @@
+   :root {
+    --omni-red: #d9534f;
+    --omni-blue: #0275d8;
+    --omni-dark: #212529;
+    --omni-light: #f8f9fa;
+    --omni-success: #198754;
+    --omni-warning: #ffc107;
+  }
+  
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--omni-light);
+    color: #333333;
+    min-height: 100vh;
+  }
+
+  .top-bar {
+    height: 64px;
+    background-color: #1a1d20;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    z-index: 1030;
+  }
+  
+  .top-bar .top-link {
+    color: #adb5bd;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+  }
+  
+  .top-bar .top-link:hover,
+  .top-bar .top-link.active {
+    color: #ffffff;
+  }
+  
+  .main-layout {
+    min-height: calc(100vh - 64px);
+  }
+  
+  .sidebar {
+    width: 260px;
+    background-color: #ffffff;
+    border-right: 1px solid #e9ecef;
+    flex-shrink: 0;
+  }
+  
+  .sidebar .nav-link {
+    color: #495057;
+    font-weight: 500;
+    border-radius: 10px;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease;
+  }
+  
+  .sidebar .nav-link:hover {
+    background-color: #f1f3f5;
+    color: var(--omni-red);
+  }
+  
+  .sidebar .nav-link.active {
+    background-color: var(--omni-red);
+    color: #ffffff !important;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(217, 83, 79, 0.25);
+  }
+  
+  .card {
+    border-radius: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .btn-blue {
+    background-color: var(--omni-blue);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+  }
+  
+  .btn-blue:hover {
+    background-color: #025aa5;
+    color: #ffffff;
+  }
+  
+  .badge-pendiente {
+    background-color: #fff3cd;
+    color: #664d03;
+    border: 1px solid #ffe69c;
+  }
+  
+  .badge-en-viaje {
+    background-color: #cff4fc;
+    color: #055160;
+    border: 1px solid #9eeaf9;
+  }
+  
+  .badge-entregado {
+    background-color: #d1e7dd;
+    color: #0f5132;
+    border: 1px solid #badbcc;
+  }
+  
+  .badge-plan-basico {
+    background-color: #e2e3e5;
+    color: #41464b;
+  }
+  
+  .badge-plan-medio {
+    background-color: #cff4fc;
+    color: #055160;
+    font-weight: 600;
+  }
+  
+  .badge-plan-premium {
+    background-color: #fff3cd;
+    color: #664d03;
+    font-weight: 700;
+    border: 1px solid #ffecb5;
+  }
+  
+  .table th {
+    font-weight: 600;
+    border-bottom: 2px solid #e9ecef;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+  }
+
+  .table td {
+    padding: 14px 12px;
+    vertical-align: middle;
+  }
+  .style-auth-card {
+    background: #ffffff;
+    border-top: 5px solid var(--omni-red) !important;
+  }
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 100%;
+      min-height: auto;
+      border-right: none;
+      border-bottom: 1px solid #e9ecef;
+    }
+  
+    .main-layout {
+      flex-direction: column;
+    }
+  }
